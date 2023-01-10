@@ -87,13 +87,5 @@ class TransformerTorchEncoder(Executor):
                 # trim cls and sep tokens
                 token_embeddings = token_embeddings[1:-1]
 
-                if self.normalize_token_embeddings:
-                    token_embeddings = (
-                            token_embeddings / np.linalg.norm(token_embeddings, axis=1)[:, None]
-                    )
-
-                if self.use_fp16:
-                    token_embeddings = token_embeddings.astype(np.half)
-
             doc.tensor = token_embeddings
             doc.embedding = sentence_embedding
