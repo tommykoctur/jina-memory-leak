@@ -9,7 +9,7 @@ import torch
 from sentence_transformers import SentenceTransformer
 from docarray import DocumentArray, Document
 from jina import Executor, requests
-
+import psutil
 
 class TransformerTorchEncoder(Executor):
     """The TransformerTorchEncoder encodes sentences into embeddings using transformers models."""
@@ -89,3 +89,4 @@ class TransformerTorchEncoder(Executor):
 
             doc.tensor = token_embeddings
             doc.embedding = sentence_embedding
+            print(f"Virtual memory usage {psutil.virtual_memory().percent} %")

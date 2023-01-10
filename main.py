@@ -1,6 +1,6 @@
 from docarray import Document, DocumentArray
 import itertools as it
-from jina import Flow
+#from jina import Flow
 
 
 def doc_generator(filepath):
