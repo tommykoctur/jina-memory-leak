@@ -12,6 +12,6 @@ executors:
         - segmenter.py
   - name: encoder
     uses:
-      jtype: TransformerSentenceEncoder
+      jtype: TransformerTorchEncoder
       py_modules:
-        -encoder.py
+        - encoder.py

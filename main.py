@@ -1,5 +1,5 @@
 from docarray import Document, DocumentArray
-from itertools import it
+import itertools as it
 from jina import Flow
 
 
@@ -12,7 +12,7 @@ def doc_generator(filepath):
                 yield d
 
 
-def index_data(file_path):
+def index_data(file_path="dirty-dataset.txt"):
 
     with Flow.load_config("flow.yaml") as f:
         input_docs = doc_generator(filepath=file_path)
