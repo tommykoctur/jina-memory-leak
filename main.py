@@ -1,13 +1,13 @@
 from docarray import Document, DocumentArray
 import itertools as it
-from jina import Flow
+#from jina import Flow
 
 
 def doc_generator(filepath):
     with open(filepath, encoding="utf-8") as f:
         data = f.readlines()
         for row in it.islice(data, len(data)):
-            if len(row.strip()) == 0:
+            if len(row.strip()) != 0:
                 d = Document(text=row.strip())
                 yield d
 
