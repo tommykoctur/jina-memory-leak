@@ -1,6 +1,6 @@
 from docarray import Document, DocumentArray
 import itertools as it
-#from jina import Flow
+from jina import Flow
 
 
 def doc_generator(filepath):
@@ -23,3 +23,6 @@ def index_data(file_path="dirty-dataset.txt"):
             show_progress=True,
         )
         print("Done")
+
+if __name__ == "__main__":
+    main()
