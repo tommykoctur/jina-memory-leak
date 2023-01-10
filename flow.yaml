@@ -1,0 +1,17 @@
+jtype: Flow
+version: "1"
+with:
+  protocol: 'GRPC'
+  prefetch: 1
+  timeout_ready: -1
+executors:
+  - name: segmenter
+    uses:
+      jtype: SpacySentencizer
+      py_modules:
+        - segmenter.py
+  - name: encoder
+    uses:
+      jtype: TransformerSentenceEncoder
+      py_modules:
+        -encoder.py
