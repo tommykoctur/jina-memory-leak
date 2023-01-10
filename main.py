@@ -25,4 +25,4 @@ def index_data(file_path="dirty-dataset.txt"):
         print("Done")
 
 if __name__ == "__main__":
-    main()
+    index_data()
