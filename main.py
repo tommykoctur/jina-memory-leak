@@ -7,8 +7,9 @@ def doc_generator(filepath):
     with open(filepath, encoding="utf-8") as f:
         data = f.readlines()
         for row in it.islice(data):
-            d = Document(text=row)
-            yield d
+            if len(row.strip()) == 0:
+                d = Document(text=row.strip())
+                yield d
 
 
 def index_data(file_path):
